@@ -1,0 +1,76 @@
+<div class="tou" ng-controller="friendCtrl">
+  <div class="t-jiantou iconfont"></div>
+  <div class="t-font">
+    <span>朋友圈</span>
+  </div>
+  <div class="t-camera iconfont"></div>
+</div>
+<div class="tu">
+  <img src="../images/lss.jpg" alt="" />
+  <div class="count">
+    <span>爱不将就</span>
+    <a href=""><img src="../images/mn1.jpg" alt="" /></a>
+  </div>
+</div>
+<ul class="details">
+  <li class="detail" ng-repeat="v in friendList">
+    <a href="" class="d-head"><img src="{{v.image}}" alt=""></a>
+    <div class="xinxi">
+      <a href="" class="d-name">{{v.name}}</a>
+      <p class="d-content">{{v.content}}</p>
+      <a href="" class="d-img"><img src="{{v.pai}}" alt=""></a>
+    </div>
+    <span class="shijian">{{v.time}}</span>
+    <div class="kuang">
+      <a href="" class="pinglun iconfont"></a>
+    </div>
+  </li>
+  <!-- <li class="detail">
+    <a href="" class="d-head"><img src="../images/wh1.jpg" alt=""></a>
+    <div class="xinxi">
+      <a href="" class="d-name">曹先生</a>
+      <p class="d-content">嫦娥奔月嫦娥奔月嫦娥奔月嫦娥奔月</p>
+      <a href="" class="d-img"><img src="" alt=""></a>
+    </div>
+    <span class="shijian">1小时前</span>
+    <div class="kuang">
+      <a href="" class="pinglun iconfont"></a>
+    </div>
+  </li>
+  <li class="detail">
+    <a href="" class="d-head"><img src="../images/wh1.jpg" alt=""></a>
+    <div class="xinxi">
+      <a href="" class="d-name">曹先生</a>
+      <p class="d-content">嫦娥奔月嫦娥奔月嫦娥奔月嫦娥奔月</p>
+      <a href="" class="d-img"><img src="" alt=""></a>
+    </div>
+    <span class="shijian">1小时前</span>
+    <div class="kuang">
+      <a href="" class="pinglun iconfont"></a>
+    </div>
+  </li>
+  <li class="detail">
+    <a href="" class="d-head"><img src="../images/wh1.jpg" alt=""></a>
+    <div class="xinxi">
+      <a href="" class="d-name">曹先生</a>
+      <p class="d-content">嫦娥奔月嫦娥奔月嫦娥奔月嫦娥奔月</p>
+      <a href="" class="d-img"><img src="" alt=""></a>
+    </div>
+    <span class="shijian">1小时前</span>
+    <div class="kuang">
+      <a href="" class="pinglun iconfont"></a>
+    </div>
+  </li>
+  <li class="detail">
+    <a href="" class="d-head"><img src="../images/wh1.jpg" alt=""></a>
+    <div class="xinxi">
+      <a href="" class="d-name">曹先生</a>
+      <p class="d-content">嫦娥奔月嫦娥奔月嫦娥奔月嫦娥奔月</p>
+      <a href="" class="d-img"><img src="" alt=""></a>
+    </div>
+    <span class="shijian">1小时前</span>
+    <div class="kuang">
+      <a href="" class="pinglun iconfont"></a>
+    </div>
+  </li> -->
+</ul>

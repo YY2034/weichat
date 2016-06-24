@@ -1,0 +1,19 @@
+<div class="chatd">
+  <ul class="chat-details" ng-controller="chatOneCtrl">
+    <li class="cd-wrapper" ng-repeat="v in List" ng-class="{mine:v.isMe}">
+      <div class="cd-left">
+        <a href="" class="cdl-img">
+          <img src="../images/ye.jpg" alt="" ng-if="v.isMe">
+          <img src="{{duifang}}" alt="" ng-if="!v.isMe">
+        </a>
+        <div class="nc">
+          <span class="f-name" ng-if="!v.isMe">{{v.user}}</span>
+          <span class="f-text">
+            <span class="f-jiao"></span>
+          {{v.xinxi}}
+          </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

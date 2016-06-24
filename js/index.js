@@ -1,0 +1,217 @@
+var weichat=angular.module('weichat',['ngTouch','ngAnimate','ngRoute']);
+weichat.controller('indexCtrl',['$scope',function($scope){
+  $scope.title="微信";
+  // $scope.show=false;
+}])
+
+var chatList=[
+    {id:1,
+      image:'../images/baby.jpg',
+      name:'anglababy',
+      content:'在吗',
+      time:'13:27',
+      chatjilu:[
+        {xinxi:'你好',isMe:true},
+        {xinxi:'hello',isMe:true},
+        {user:'baby',xinxi:'今天天气不错',isMe:false}
+      ]
+    },
+    {id:2,
+      image:'../images/zly.jpg',
+      name:'赵丽颖',
+      content:'你好',
+      time:'10:15',
+      chatjilu:[
+        {user:'赵丽颖',xinxi:'你好',isMe:false},
+        {xinxi:'hello',isMe:true},
+        {xinxi:'今天天气不错',isMe:true}
+      ]
+    },
+    {id:3,
+      image:'../images/lss.jpg',
+      name:'刘诗诗',
+      content:'Hello!',
+      time:'23:27',
+      chatjilu:[
+        {xinxi:'端午节快乐',isMe:false},
+        {xinxi:'嗯嗯',isMe:true},
+        {xinxi:'高考过后心情怎么样？',isMe:true}
+      ]
+    },
+    {id:4,
+      image:'../images/zyh.jpg',
+      name:'赵奕欢',
+      content:'端午节快乐',
+      time:'15:17',
+      chatjilu:[
+        {xinxi:'去哪找工作呢？',isMe:false},
+        {xinxi:'不清楚诶',isMe:true},
+        {xinxi:'在吗？',isMe:true}
+      ]
+    },
+    {id:5,
+      image:'../images/zyw.jpeg',
+      name:'朱亚文',
+      content:'端午节快乐',
+      time:'15:17',
+      chatjilu:[
+        {xinxi:'去哪找工作呢？',isMe:false},
+        {xinxi:'不清楚诶',isMe:true},
+        {xinxi:'在吗？',isMe:true}
+      ]
+    },
+    {id:6,
+      image:'../images/hjh.jpg',
+      name:'霍建华',
+      content:'端午节快乐',
+      time:'15:17',
+      chatjilu:[
+        {xinxi:'去哪找工作呢？',isMe:false},
+        {xinxi:'不清楚诶',isMe:true},
+        {xinxi:'在吗？',isMe:true}
+      ]
+    },
+    {id:7,
+      image:'../images/zyx.jpeg',
+      name:'张艺兴',
+      content:'端午节快乐',
+      time:'15:17',
+      chatjilu:[
+        {xinxi:'去哪找工作呢？',isMe:false},
+        {xinxi:'不清楚诶',isMe:true},
+        {xinxi:'在吗？',isMe:true}
+      ]
+    },
+    {id:8,
+      image:'../images/bjt.jpg',
+      name:'白敬亭',
+      content:'端午节快乐',
+      time:'15:17',
+      chatjilu:[
+        {xinxi:'去哪找工作呢？',isMe:false},
+        {xinxi:'不清楚诶',isMe:true},
+        {xinxi:'在吗？',isMe:true}
+      ]
+    },
+    {id:9,
+      image:'../images/hzt.jpg',
+      name:'黄子韬',
+      content:'端午节快乐',
+      time:'15:17',
+      chatjilu:[
+        {xinxi:'去哪找工作呢？',isMe:false},
+        {xinxi:'不清楚诶',isMe:true},
+        {xinxi:'在吗？',isMe:true}
+      ]
+    },
+    {id:10,
+      image:'../images/hg.png',
+      name:'胡歌',
+      content:'端午节快乐',
+      time:'15:17',
+      chatjilu:[
+        {xinxi:'去哪找工作呢？',isMe:false},
+        {xinxi:'不清楚诶',isMe:true},
+        {xinxi:'在吗？',isMe:true}
+      ]
+    }
+  ];
+var contactList=[
+  {
+    image:'../images/baby.jpg',
+    name:'爱不将就',
+    hao:203411,
+    relign:'山西 晋城'}
+];
+var addressList=[
+  {
+    key:'A',
+    people:[
+      {image:'../images/ym.jpg',uname:'爱不将就'},
+      {image:'../images/ym.jpg',uname:'爱不将就'},
+      {image:'../images/ym.jpg',uname:'爱不将就'},
+      {image:'../images/ym.jpg',uname:'爱不将就'}
+    ]
+
+  },
+  {
+    key:'B',
+    image:'../images/ym.jpg',
+    uname:'爱不将就'
+  }
+]
+var friendList=[
+  {id:1,image:'../images/wh1.jpg',name:'屎儿',content:'哈哈，好多好吃的^_^',time:'2小时前',pai:'../images/hjh.jpg'},
+  {id:2,image:'../images/baby.jpg',name:'燕燕燕燕子',content:'无聊Ing...',time:'5小时前',
+pai:'../images/hg.png'},
+  {id:3,image:'../images/ym.jpg',name:'魔幻',content:'诶~考试没过...',time:'8小时前',
+pai:'../images/baby.jpg'},
+  {id:4,image:'../images/wh1.jpg',name:'岳英俊',content:'端午节快乐',time:'2天前',
+pai:'../images/bjt.jpg'},
+];
+
+weichat.controller('weixinCtrl',['$scope','$routeParams',function($scope,$routeParams){
+  $scope.chatList=chatList;
+}])
+weichat.controller('chatOneCtrl',['$scope','$routeParams',function($scope,$routeParams){
+  var id=$routeParams.id;
+  $scope.chatList=chatList;
+  $scope.duifang=chatList[id].image;
+  $scope.List= chatList[id].chatjilu;
+}])
+weichat.controller('addressCtrl',['$scope','$routeParams',function($scope,$routeParams){
+  $scope.addressList=addressList;
+}])
+weichat.controller('contactCtrl',['$scope','$routeParams',function($scope,$routeParams){
+  // var id=$routeParams.id;
+  $scope.contactList=contactList;
+}])
+
+weichat.controller('friendCtrl',['$scope','$routeParams',function($scope,$routeParams){
+  var id=$routeParams.id;
+  $scope.friendList=friendList;
+
+}])
+weichat.directive('uqHeader',[function(){
+  return {
+    replace:true,
+    restrict:'EAC',
+    templateUrl:'../views/header.html'
+  }
+}]).directive('uqFooter',[function(){
+  return {
+    replace:true,
+    restrict:'EAC',
+    templateUrl:'../views/footer.html'
+  }
+}]);
+
+weichat.config(['$routeProvider',function($routeProvider){
+  $routeProvider.when('/',{
+    controller:'indexCtrl',
+    templateUrl:'../views/weichat.html'
+  }).when('/weixin',{
+    controller:'weixinCtrl',
+    templateUrl:'../views/weichat.html'
+  }).when('/chat/:id',{
+    controller:'chatOneCtrl',
+    templateUrl:'../views/weichat-one.html'
+  }).when('/contact',{
+    controller:'contactCtrl',
+    templateUrl:'../views/contact.html'
+  }).when('/contactOne',{
+    controller:'contactCtrl',
+    templateUrl:'../views/contact-one.html'
+  }).when('/discover',{
+    controller:'discoverCtrl',
+    templateUrl:'../views/discover.html'
+  }).when('/friends',{
+    controller:'friendCtrl',
+    templateUrl:'../views/friend.html'
+  }).when('/me',{
+    controller:'meCtrl',
+    templateUrl:'../views/me.html'
+  }).otherwise({
+    redirectTo:'/'
+  });
+}])

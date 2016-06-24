@@ -1,0 +1,30 @@
+<div class="contact-details" ng-controller="contactCtrl" ng-repeat="v in contactList">
+  <div class="m-first"></div>
+  <div class="message-one">
+    <a href="" class="mo-img">
+      <img src="{{v.image}}" alt="">
+    </a>
+    <div class="mo-text">
+      <span class="wei-name">{{v.name}}</span>
+      <span class="wei-hao">微信号：{{v.hao}}</span>
+    </div>
+  </div>
+  <ul class="message-two">
+    <li class="mt-religin">
+      <strong>地区</strong>
+      <span>{{v.relign}}</span>
+    </li>
+    <li class="photo">
+      <strong>个人相册</strong>
+      <div class="p-imgs">
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+      </div>
+    </li>
+    <li class="mt-more">
+      <strong>更多</strong>
+    </li>
+  </ul>
+  <a href="" id="send-news">发消息</a>
+</div>
